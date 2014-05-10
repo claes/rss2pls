@@ -1,5 +1,7 @@
 #!/bin/bash
 
+xsldir="$( cd "$( dirname "$0" )" && pwd )"
+
 declare -A podcasts=( 
 ["http://api.sr.se/api/rss/pod/4021"]="SR Studio Ett"
 ["http://api.sr.se/api/rss/pod/3951"]="SR Studio Medierna"
@@ -24,7 +26,7 @@ declare -A podcasts=(
 ["http://api.sr.se/api/rss/pod/7625"]="SR Väder")
 
 for url in "${!podcasts[@]}";  
-do curl $url | xsltproc rss2pls.xsl - > "${podcasts[$url]}.pls";  
+do curl $url | xsltproc $xsldir/rss2pls.xsl - > "${podcasts[$url]}.pls";  
 done
 
 
