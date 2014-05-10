@@ -1,0 +1,5 @@
+Downloads RSS podcast files from Sveriges Radio and creates .pls 
+playlists files from them, using XSLT
+
+Uses xsltproc and curl
+
